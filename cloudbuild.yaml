@@ -1,0 +1,14 @@
+steps:
+- name: linuxserver/calibre-web
+  args:
+    [
+      '-e', 'PUID=1000',
+      '-e', 'PGID=1000',
+      '-e', 'TZ=Europe/London',
+      '-e', 'DOCKER_MODS=linuxserver/calibre-web:calibre',
+      '-p', '8083:8080',
+      '-v', '/config:/config',
+      '-v', '/books:/books',
+    ]
+images: 
+- gcr.io/$PROJECT_ID/calibre-web
